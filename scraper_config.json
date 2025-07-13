@@ -1,0 +1,8 @@
+{
+  "headless_mode": true,
+  "timeout": 30,
+  "debug_mode": false,
+  "save_screenshots": false,
+  "chrome_path": "./chrome-win64/chrome.exe",
+  "chromedriver_path": "./chromedriver-win64/chromedriver.exe"
+}

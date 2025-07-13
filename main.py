@@ -8,10 +8,12 @@ Utilise les scrapers améliorés avec sélecteurs dynamiques
 from scpi_scraper import scrape_scpi_data
 from config_scraper import scraper_config
 import sys
+import time
 
 def main():
     """Fonction principale d'extraction"""
-
+    start_time = time.time()
+    
     print("🚀 EXTRACTION DES DONNÉES SCPI")
     print("=" * 50)
 
@@ -46,7 +48,8 @@ def main():
 
         # Afficher les informations clés
         print("\n💰 INFORMATIONS FINANCIÈRES:")
-        print(f"   Prix de part: {data.chiffres_cles.prix_part_actuel}€")
+        print(f"   Prix d'achat: {data.chiffres_cles.prix_part_actuel}€")
+        print(f"   Prix de vente: {data.chiffres_cles.prix_part_vente}€")
         print(f"   Distribution brute: {data.chiffres_cles.taux_distribution_brut}% ({data.chiffres_cles.dividende_brut_annuel}€/part)")
         print(f"   Distribution nette: {data.chiffres_cles.taux_distribution_net}% ({data.chiffres_cles.dividende_net_annuel}€/part)")
         print(f"   Capitalisation: {data.chiffres_cles.capitalisation}")
@@ -82,9 +85,14 @@ def main():
         print("\n❌ ERREUR lors de l'extraction:")
         print(f"   {str(e)}")
         return None
+    finally:
+        end_time = time.time()
+        duration = end_time - start_time
+        print(f"\n⏱️  Temps d'exécution: {duration:.2f} secondes.")
 
 def extraction_rapide():
     """Extraction rapide avec affichage minimal"""
+    start_time = time.time()
     try:
         data = scrape_scpi_data(39)
         print(f"EPARGNE FONCIERE - Prix: {data.chiffres_cles.prix_part_actuel}€ - Distribution: {data.chiffres_cles.taux_distribution_brut}%")
@@ -92,6 +100,10 @@ def extraction_rapide():
     except Exception as e:
         print(f"Erreur: {e}")
         return None
+    finally:
+        end_time = time.time()
+        duration = end_time - start_time
+        print(f"⏱️  Temps d'exécution (rapide): {duration:.2f} secondes.")
 
 if __name__ == "__main__":
     # Vérifier si l'argument --quick est passé

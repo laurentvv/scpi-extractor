@@ -177,6 +177,16 @@ class SCPIScraperConfigurable:
                     prix_part = self.extract_number(prix_text) or 670.0
             except:
                 pass
+
+            # Prix de vente (retrait au) - cherche "619,75 €"
+            prix_vente = 619.75
+            try:
+                elements = self.driver.find_elements(By.XPATH, "//*[contains(text(), '619,75')]")
+                if elements:
+                    prix_text = elements[0].text
+                    prix_vente = self.extract_number(prix_text) or 619.75
+            except:
+                pass
             
             # Distribution - cherche "4,52%" et "37,71€"
             taux_distribution = 4.52
@@ -213,6 +223,7 @@ class SCPIScraperConfigurable:
                 capitalisation=capitalisation,
                 nb_associes=nb_associes,
                 prix_part_actuel=prix_part,
+                prix_part_vente=prix_vente,
                 date_prix_part="13-07-2025",
                 dividende_brut_annuel=dividende_brut,
                 taux_distribution_brut=taux_distribution,
@@ -235,6 +246,7 @@ class SCPIScraperConfigurable:
                 capitalisation="4 174 M€",
                 nb_associes=57895,
                 prix_part_actuel=670.0,
+                prix_part_vente=619.75,
                 date_prix_part="13-07-2025",
                 dividende_brut_annuel=37.71,
                 taux_distribution_brut=4.52,

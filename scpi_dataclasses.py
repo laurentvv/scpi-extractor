@@ -22,7 +22,8 @@ class SCPIChiffresClés:
     # Capitalisation et parts
     capitalisation: str  # Ex: "4 174 M€"
     nb_associes: int
-    prix_part_actuel: float  # En euros
+    prix_part_actuel: float  # En euros (prix d'achat)
+    prix_part_vente: float  # En euros (prix de vente/retrait)
     date_prix_part: str
     
     # Distribution
@@ -112,7 +113,8 @@ class SCPIData:
         """Affiche un résumé des données extraites"""
         print(f"\n=== SCPI {self.general_info.nom} ===")
         print(f"Société de gestion: {self.general_info.societe_gestion}")
-        print(f"Prix actuel: {self.chiffres_cles.prix_part_actuel}€")
+        print(f"Prix d'achat: {self.chiffres_cles.prix_part_actuel}€")
+        print(f"Prix de vente: {self.chiffres_cles.prix_part_vente}€")
         print(f"Distribution brute 2024: {self.chiffres_cles.taux_distribution_brut}% ({self.chiffres_cles.dividende_brut_annuel}€)")
         print(f"Capitalisation: {self.chiffres_cles.capitalisation}")
         print(f"Nombre d'associés: {self.chiffres_cles.nb_associes:,}")
