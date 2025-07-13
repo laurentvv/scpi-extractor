@@ -31,9 +31,11 @@ pip install -r requirements.txt
 ```
 
 3. Téléchargez Chrome et ChromeDriver :
-   - Téléchargez Chrome depuis [le site officiel](https://www.google.com/chrome/)
-   - Téléchargez ChromeDriver depuis [le site officiel](https://chromedriver.chromium.org/downloads)
-   - Placez les fichiers dans les dossiers `chrome-win64/` et `chromedriver-win64/` respectivement
+   - Téléchargez Chrome pour les tests depuis [Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/)
+   - Liens directs pour la version 138.0.7204.94 :
+     - [Chrome](https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win64/chrome-win64.zip)
+     - [ChromeDriver](https://storage.googleapis.com/chrome-for-testing-public/138.0.7204.94/win64/chromedriver-win64.zip)
+   - Décompressez les fichiers dans les dossiers `chrome-win64/` et `chromedriver-win64/` respectivement
 
 ## 📊 Structure des données
 
@@ -202,5 +204,6 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 ## 📄 Licence
 
 Ce projet est à des fins éducatives. Respectez les conditions d'utilisation de scpi-lab.com.
+
 
 
