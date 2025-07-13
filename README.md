@@ -21,8 +21,8 @@ Ce projet permet d'extraire automatiquement les données des SCPI depuis le site
 
 1. Clonez le projet :
 ```bash
-git clone https://github.com/laurentvv/scpi-data-extractor.git
-cd scpi-data-extractor
+git clone https://github.com/laurentvv/scpi-extractor.git
+cd scpi-extractor
 ```
 
 2. Installez les dépendances :
@@ -202,4 +202,5 @@ Les contributions sont les bienvenues ! N'hésitez pas à :
 ## 📄 Licence
 
 Ce projet est à des fins éducatives. Respectez les conditions d'utilisation de scpi-lab.com.
+
 
