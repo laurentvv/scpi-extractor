@@ -1,0 +1,10 @@
+/.venv
+/chrome-win64/
+/chromedriver-win64/
+*.dll
+*.exe
+*.zip
+*.log
+__pycache__/
+*.py[cod]
+*$py.class

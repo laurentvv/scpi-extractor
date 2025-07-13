@@ -1,0 +1,4 @@
+selenium
+requests
+PyPDF2
+dataclasses
